@@ -1,16 +1,13 @@
 function stones(n, a, b) {
-    let processor = function(index) {
-        if(index === n -1){
-            return [a,b];
-        }
-        let val = processor(index+1);
-        let response = [];
-        let newArrA = val.map(v => v + a);
-        let newArrB = val.map(v => v + b);
-        [].push.apply(response, newArrA);
-        [].push.apply(response, newArrB);
-        return response;        
+    n--; // first element is always 0
+    if(a === b){
+        return [n*a];
     }
     
-    return new Set( processor(1));    
+    let entries = [];
+    for(let i = 0; i <= n; i++){
+        let value = a*(n-i) + b*i;
+        entries.push(value);
+    }
+    return entries.sort((a,b) => a - b);
 }
