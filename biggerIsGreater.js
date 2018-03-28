@@ -23,7 +23,7 @@ function biggerIsGreater(w) {
     let min = arr[inflexionIndex].charCodeAt(0);
     for(let j = inflexionIndex; j < sLen; j++){
         let jCode = w[j].charCodeAt(0);
-        if(jCode < min && jCode >= char){
+        if(jCode < min && jCode > char){
             minIndex = j;
         }
     }
