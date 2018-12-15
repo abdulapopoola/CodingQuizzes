@@ -16,6 +16,7 @@ function medianForCountingSort(countSortArr, len) {
     }
 
     if (isEven && midpoint >= sum) {
+        // Handle cases where the median falls into the right half of the even array
         let upperMedianIndex = medianIndex + 1;
         while (upperMedianIndex < upperLimit) {
             sum += countSortArr[upperMedianIndex];
@@ -40,7 +41,7 @@ function activityNotifications(expenditure, d) {
     }
 
     let median = 0;
-    let noticeCount = 0;;
+    let noticeCount = 0;
     for (let i = d, len = expenditure.length; i < len; i++) {
         median = medianForCountingSort(countSortArr, d);
         let compare = expenditure[i];
